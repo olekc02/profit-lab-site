@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profit Lab — Educational Membership</title>
+  <meta name="description" content="Profit Lab provides educational, rules‑based market commentary for stocks, options, and crypto. Not investment advice." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- TailwindCSS CDN for fast setup; replace with your build later if you want -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --pl-green: #2ecc71; /* Basic */
+      --pl-blue: #4f7cff;  /* Premium */
+      --pl-purple: #8b5cf6; /* Deluxe */
+      --ink: #f3f5f7;
+      --muted: #aab3bf;
+      --bg: #0f1215;
+      --panel: #151a1f;
+      --line: #2b3340;
+    }
+    html, body { background: var(--bg); color: var(--ink); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid var(--line); }
+    .shadow-soft { box-shadow: 0 10px 25px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03); }
+  </style>
+</head>
+<body class="antialiased">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/40 bg-black/20 border-b border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <!-- Simple inline SVG logo: flask + candles -->
+        <svg width="34" height="34" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[var(--pl-green)]">
+          <g stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 14h40"/>
+            <path d="M28 14v18"/>
+            <path d="M68 14v18"/>
+            <path d="M18 32l6 42 24 8 24-8 6-42"/>
+            <!-- trend line -->
+            <path d="M30 58 L50 42"/>
+            <!-- candles -->
+            <path d="M40 58v-18"/>
+            <rect x="36" y="46" width="8" height="12" rx="1"/>
+            <path d="M60 46v-16"/>
+            <rect x="56" y="46" width="8" height="8" rx="1"/>
+          </g>
+        </svg>
+        <span class="font-extrabold tracking-tight text-xl">Profit Lab</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-[var(--muted)]">
+        <a href="#pricing" class="hover:text-white">Pricing</a>
+        <a href="#how" class="hover:text-white">How it works</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+        <a href="#legal" class="hover:text-white">Legal</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#pricing" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-sm">View plans</a>
+        <a href="<PORTAL_LINK>" class="px-4 py-2 rounded-xl bg-[var(--pl-purple)] hover:opacity-90 text-sm">Manage billing</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1]">
+          Educational, rules‑based market commentary for <span class="text-[var(--pl-green)]">stocks</span>, <span class="text-[var(--pl-blue)]">options</span>, & <span class="text-[var(--pl-purple)]">crypto</span>.
+        </h1>
+        <p class="mt-5 text-[var(--muted)] text-lg leading-relaxed">
+          Daily levels, clean entry/exit rules, and copy‑paste options brackets. No personalized advice. Content delivered in Discord at
+          <strong>09:15</strong>, <strong>12:00</strong>, and <strong>15:20 ET</strong> (per tier).
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#pricing" class="px-5 py-3 rounded-2xl bg-[var(--pl-green)] text-black font-semibold hover:opacity-90">Choose a plan</a>
+          <a href="<DISCORD_INVITE>" class="px-5 py-3 rounded-2xl border border-[var(--line)] hover:bg-white/10">Join Discord</a>
+        </div>
+      </div>
+      <div class="glass shadow-soft rounded-3xl p-6 lg:p-8">
+        <div class="text-sm text-[var(--muted)] mb-3">Today’s example signal card</div>
+        <div class="bg-[var(--panel)] border border-[var(--line)] rounded-2xl p-5">
+          <div class="flex items-center justify-between">
+            <div class="font-semibold">TSLA — Intraday Plan</div>
+            <span class="text-xs px-2 py-1 rounded bg-white/10">Educational</span>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mt-4 text-sm">
+            <div><div class="text-[var(--muted)]">Trigger Long</div><div class="font-semibold">5m > R1</div></div>
+            <div><div class="text-[var(--muted)]">TP1 / TP2</div><div class="font-semibold">+0.5R / +1R</div></div>
+            <div><div class="text-[var(--muted)]">Stop</div><div class="font-semibold">swing‑low</div></div>
+          </div>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+            <div class="p-3 rounded-xl bg-white/5">CALL spread: buy 250C / sell 255C (Fri)</div>
+            <div class="p-3 rounded-xl bg-white/5">PUT spread: buy 240P / sell 235P (Fri)</div>
+          </div>
+          <div class="mt-4 text-xs text-[var(--muted)]">Pivots included on every card: P, R1–R3, S1–S3.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-14 lg:py-20 border-t border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight">Pricing</h2>
+      <p class="mt-3 text-[var(--muted)]">Subscriptions renew automatically. Manage/cancel anytime in the Stripe Customer Portal.</p>
+
+      <div class="mt-8 grid lg:grid-cols-3 gap-6">
+        <!-- BASIC -->
+        <div class="glass shadow-soft rounded-3xl p-6 flex flex-col">
+          <div class="text-sm font-semibold text-[var(--pl-green)]">BASIC</div>
+          <div class="mt-2 text-4xl font-extrabold">$14<span class="text-xl font-bold text-[var(--muted)]">/mo</span></div>
+          <div class="text-sm text-[var(--muted)]">or $126/yr (save 25%)</div>
+          <ul class="mt-5 space-y-2 text-[15px] text-[var(--muted)]">
+            <li>2 posts/day: 09:15 (Open) • 15:20 (Power Hour)</li>
+            <li>5 core stocks + BTC, ETH</li>
+            <li>Signal card: Current price • Target • S/R • Sentiment • Stop/TP</li>
+            <li>Pivots: P, R1–R3, S1–S3</li>
+            <li>1 custom ticker/week (same‑day during market hours)</li>
+          </ul>
+          <a href="<BASIC_LINK>" class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-[var(--pl-green)] text-black font-semibold py-3 hover:opacity-90">Join Basic</a>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="glass shadow-soft rounded-3xl p-6 flex flex-col border border-white/10">
+          <div class="text-sm font-semibold text-[var(--pl-blue)]">PREMIUM</div>
+          <div class="mt-2 text-4xl font-extrabold">$32<span class="text-xl font-bold text-[var(--muted)]">/mo</span></div>
+          <div class="text-sm text-[var(--muted)]">or $300/yr (save 22%)</div>
+          <ul class="mt-5 space-y-2 text-[15px] text-[var(--muted)]">
+            <li><strong>Everything in Basic</strong> + 3 posts/day: 09:15 • 12:00 • 15:20</li>
+            <li>Options‑ready CALL/PUT brackets (TP1/TP2/SL + time‑stops)</li>
+            <li>12 stocks + 4–6 cryptos (rotated weekly)</li>
+            <li>Annotated chart snap for top movers</li>
+            <li>3 custom tickers/week (response by next scheduled post)</li>
+          </ul>
+          <a href="<PREMIUM_LINK>" class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-[var(--pl-blue)] text-black font-semibold py-3 hover:opacity-90">Join Premium</a>
+        </div>
+
+        <!-- DELUXE -->
+        <div class="glass shadow-soft rounded-3xl p-6 flex flex-col">
+          <div class="text-sm font-semibold text-[var(--pl-purple)]">DELUXE</div>
+          <div class="mt-2 text-4xl font-extrabold">$59<span class="text-xl font-bold text-[var(--muted)]">/mo</span></div>
+          <div class="text-sm text-[var(--muted)]">or $540/yr (save 24%)</div>
+          <ul class="mt-5 space-y-2 text-[15px] text-[var(--muted)]">
+            <li><strong>Everything in Premium</strong> + private low‑noise channels</li>
+            <li>High‑tempo focus list (4–6 tickers) with strict time‑stops</li>
+            <li>Advanced notes: R3/S3, IV/volatility context, promote TP1→TP2</li>
+            <li>Weekly scorecard (TP1/TP2 hit rates)</li>
+            <li>1 custom ticker per trading day (~5/week), same‑session response</li>
+          </ul>
+          <a href="<DELUXE_LINK>" class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-[var(--pl-purple)] text-black font-semibold py-3 hover:opacity-90">Join Deluxe</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="py-14 lg:py-20 border-t border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight">How it works</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="glass rounded-3xl p-6">
+          <div class="text-sm text-[var(--muted)]">Step 1</div>
+          <div class="mt-1 font-bold text-xl">Choose a plan</div>
+          <p class="mt-2 text-[var(--muted)]">Subscribe via Stripe (monthly or annual). You’ll receive a receipt and can manage billing anytime.</p>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <div class="text-sm text-[var(--muted)]">Step 2</div>
+          <div class="mt-1 font-bold text-xl">Join Discord</div>
+          <p class="mt-2 text-[var(--muted)]">Enter your <em>Discord User ID</em> at checkout. We’ll grant the role for your tier and unlock channels.</p>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <div class="text-sm text-[var(--muted)]">Step 3</div>
+          <div class="mt-1 font-bold text-xl">Read the signals</div>
+          <p class="mt-2 text-[var(--muted)]">Follow rules‑based posts with levels, triggers, and targets. Educational commentary only; manage your own risk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-14 lg:py-20 border-t border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight">FAQ</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6 text-[var(--muted)]">
+        <div class="glass rounded-3xl p-6">
+          <div class="font-semibold text-white">Is this investment advice?</div>
+          <p class="mt-2">No. It’s educational, rules‑based market commentary. We don’t provide personalized advice, execution, or custody.</p>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <div class="font-semibold text-white">Can I cancel anytime?</div>
+          <p class="mt-2">Yes. Manage your subscription in the Stripe Customer Portal. Access remains until the end of your paid period.</p>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <div class="font-semibold text-white">What’s my Discord User ID?</div>
+          <p class="mt-2">Discord → Settings → Advanced → enable Developer Mode → right‑click your profile → <em>Copy User ID</em>. Paste it at checkout.</p>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <div class="font-semibold text-white">Refund policy</div>
+          <p class="mt-2">Example: full refund within 7 days if you had access issues. Otherwise no partial‑month refunds. Adjust to your policy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGAL -->
+  <section id="legal" class="py-14 lg:py-20 border-t border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight">Legal & Disclaimers</h2>
+      <div class="mt-4 text-[var(--muted)] space-y-3">
+        <p>Educational content only; not investment advice, a recommendation, or a solicitation to buy/sell securities or crypto. We do not consider your objectives, financial situation, or needs. Trading involves risk of loss; past performance does not guarantee future results.</p>
+        <p><strong>Options risk:</strong> Read the OCC <a class="underline hover:text-white" href="https://www.theocc.com/Company-Information/Documents-and-Archives/Options-Disclosure-Document" target="_blank" rel="noreferrer noopener">Options Disclosure Document (ODD)</a> before trading options.</p>
+        <p>We do not execute trades, route orders, or hold customer funds. Access is to content and community channels only.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[var(--muted)] text-sm">
+      <div>
+        © <span id="year"></span> Profit Lab — Educational Membership
+      </div>
+      <div class="flex gap-4 items-center">
+        <a href="mailto:support@profitlab.example" class="hover:text-white">support@profitlab.example</a>
+        <a href="<DISCORD_INVITE>" class="hover:text-white">Discord</a>
+        <a href="#pricing" class="hover:text-white">Pricing</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
